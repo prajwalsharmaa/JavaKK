@@ -1,17 +1,23 @@
+
+
 public class Main{
-    static void main() {
+    static void main(){
         int[] arr = {2,3,5,6,3};
-        System.out.println(search(7,arr));
+        System.out.println("Element found at index: "+search(6,arr));
+
+
+
     }
-    static String search(int x,int[] arr){
-
-        for (int i = 0; i < arr.length; i++) {
-            if(arr[i] == x){
-                return "Element found at index " + i;
-            }
-
+    static int search(int target,int[] arr){
+        if(arr.length == 0){
+            return -1;
         }
-        return "Element not found in array";
-
+        for (int i = 0; i < arr.length; i++) {
+            int element = arr[i];
+            if(element== target){
+                return i;
+            }
+        }
+        return -1;
     }
 }
